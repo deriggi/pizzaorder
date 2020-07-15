@@ -30,3 +30,7 @@ A response from the pizza orders request will look like this:
         "createdAt": 1594826772000
     }
 ```
+
+## Swagger
+Swagger UI is available at 
+<http://localhost:8080>/swagger-ui.html#/pizza-controller
