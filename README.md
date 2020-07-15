@@ -33,4 +33,4 @@ A response from the pizza orders request will look like this:
 
 ## Swagger
 When running locally, Swagger UI is available at 
-```http://localhost8080/swagger-ui.html#/pizza-controller``` 
+```http://localhost8080/swagger-ui.html``` 
