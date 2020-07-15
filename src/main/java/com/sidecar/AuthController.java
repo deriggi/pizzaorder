@@ -5,7 +5,7 @@ package com.sidecar;
 import com.sidecar.security.JwtRequest;
 import com.sidecar.security.JwtResponse;
 import com.sidecar.security.JwtTool;
-import com.sidecar.security.JwtUserDetailsService;
+import com.sidecar.security.SidecarUserDetailsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class AuthenticationController {
+public class AuthController {
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -31,7 +31,7 @@ public class AuthenticationController {
 	private JwtTool jwtTokenUtil;
 
 	@Autowired
-	private JwtUserDetailsService userDetailsService;
+	private SidecarUserDetailsService userDetailsService;
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {

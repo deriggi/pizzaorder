@@ -21,7 +21,7 @@ import io.jsonwebtoken.ExpiredJwtException;
 public class JwtRequestFilter extends OncePerRequestFilter {
 
 	@Autowired
-	private JwtUserDetailsService jwtUserDetailsService;
+	private SidecarUserDetailsService jwtUserDetailsService;
 
 	@Autowired
 	private JwtTool jwtTokenUtil;
