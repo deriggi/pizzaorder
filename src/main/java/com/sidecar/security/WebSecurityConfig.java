@@ -55,7 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				// for ease of testing we open these up, and swagger
 				.authorizeRequests().antMatchers("/authenticate","/pizzaorders" ,"/v2/api-docs", "/swagger-ui.html", "/webjars/springfox-swagger-ui/*", "/swagger-resources/configuration/*", "/swagger-resources").permitAll().
 				
-				// authenticate requests on in the above list
+				// authenticate requests not in the above list
 				anyRequest().authenticated().and().
 				exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
