@@ -15,7 +15,7 @@ public class Topping {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column
+    @Column(unique = true)
     private String name;
 
     public Topping(String name){

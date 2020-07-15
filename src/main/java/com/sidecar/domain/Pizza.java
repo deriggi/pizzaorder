@@ -23,7 +23,7 @@ public class Pizza {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
-    @OneToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     Set<Topping> toppings;
     public Set<Topping> getToppings(){
         return toppings;

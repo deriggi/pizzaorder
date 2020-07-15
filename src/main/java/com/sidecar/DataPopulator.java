@@ -44,9 +44,10 @@ public class DataPopulator {
         c.setPassword(bcryptEncoder.encode("password"));
         c = customerDao.save(c);
 
-        Topping anchovy = new Topping("anchovy");
         Set<Topping> toppings = new HashSet<Topping>();
-        toppings.add(anchovy);
+        toppings.add(new Topping("artichoke"));
+        toppings.add(new Topping("pepperoni"));
+        toppings.add(new Topping("anchovy"));
         toppingDao.save(toppings);
 
         Pizza p = new Pizza();
