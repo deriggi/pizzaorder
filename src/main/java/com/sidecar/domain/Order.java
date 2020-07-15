@@ -27,6 +27,14 @@ public class Order {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
     
+    public Order(){
+        
+    }
+    public Order(Customer c){
+        customer = c;
+        createdAt = new Date();
+    }
+
     @ManyToMany
     private Set<Pizza> pizza;
 
