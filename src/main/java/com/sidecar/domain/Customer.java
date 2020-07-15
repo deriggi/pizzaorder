@@ -17,7 +17,7 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
     
-    @Column
+    @Column(unique = true)
     private String username;
     
     @Column
@@ -30,8 +30,6 @@ public class Customer {
 	@JsonIgnore
     private String password;
     
-    // @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    // private Set<Order> orders;
 
 	public String getUsername() {
 		return username;
