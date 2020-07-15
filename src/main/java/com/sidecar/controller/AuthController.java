@@ -38,15 +38,6 @@ public class AuthController {
 	@Autowired
 	private SidecarUserDetailsService userDetailsService;
 
-	@Autowired
-	private PizzaOrderService orderService;
-
-	@RequestMapping(value = "/pizzaorders", method = RequestMethod.GET)
-	public ResponseEntity<?> getPizzaOrders(@RequestParam String username) throws Exception {
-		Set<Order> orders = orderService.findByCustomer(userDetailsService.loadCustomerByUsername(username));
-        return ResponseEntity.ok(orders);
-	}
-
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
