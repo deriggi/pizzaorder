@@ -41,7 +41,7 @@ public class AuthController {
 	@Autowired
 	private PizzaOrderService orderService;
 
-	@RequestMapping(value = "/pizzaorders", method = RequestMethod.POST)
+	@RequestMapping(value = "/pizzaorders", method = RequestMethod.GET)
 	public ResponseEntity<?> getPizzaOrders(@RequestParam String username) throws Exception {
 		Set<Order> orders = orderService.findByCustomer(userDetailsService.loadCustomerByUsername(username));
         return ResponseEntity.ok(orders);

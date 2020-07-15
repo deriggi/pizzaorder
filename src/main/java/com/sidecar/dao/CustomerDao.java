@@ -10,5 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface CustomerDao extends CrudRepository<Customer, Integer> {
 
     Customer findByUsername(String username);
+    
 
 }
