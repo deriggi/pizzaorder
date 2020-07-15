@@ -38,9 +38,6 @@ public class DataPopulator {
  
     @PostConstruct
     private void postConstruct() {
-        // User admin = new User("admin", "admin password");
-        // User normalUser = new User("user", "user password");
-        // userRepository.save(admin, normalUser);
 
         Customer c= new Customer();
         c.setUsername("sidecar");
@@ -54,15 +51,11 @@ public class DataPopulator {
 
         Pizza p = new Pizza();
         p.setToppings(toppings);
-        p = pizzaDao.save(p);
+        pizzaDao.save(p);
         
         Order o = new Order(c);
         o.addPizza(p);
-        
-
         o = orderDao.save(o);
-        System.out.println(o.getPizza().size() + " is the size");
-        System.out.println(o.getPizza().iterator().next().getToppings().size() + " are the toppings on this"); 
 
     }
     

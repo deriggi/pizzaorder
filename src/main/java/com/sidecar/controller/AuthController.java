@@ -9,8 +9,8 @@ import com.sidecar.domain.Order;
 import com.sidecar.security.JwtRequest;
 import com.sidecar.security.JwtResponse;
 import com.sidecar.security.JwtTool;
-import com.sidecar.security.PizzaOrderService;
-import com.sidecar.security.SidecarUserDetailsService;
+import com.sidecar.service.PizzaOrderService;
+import com.sidecar.service.SidecarUserDetailsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
