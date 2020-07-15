@@ -33,14 +33,14 @@ A response from the pizza orders request will look like this:
 
 To Create a pizza order, there is a simple service that takes a list of toppings and a username like
 as a ```POST``` request to ```/pizzaorders``` :
-
-```{
+```
+{
   "toppings": [
     "string"
   ],
   "username": "string"
-}```
-
+}
+```
  
 
 ## Swagger
