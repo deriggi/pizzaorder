@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "customer")
-public class CustomerDao {
+public class Customer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,8 +35,8 @@ public class CustomerDao {
 	@JsonIgnore
     private String password;
     
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private Set<OrderDao> orders;
+    // @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    // private Set<Order> orders;
 
 	public String getUsername() {
 		return username;

@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "delivery_order")
-public class OrderDao {
+public class Order {
     
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class OrderDao {
     
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
-    private CustomerDao customer;
+    private Customer customer;
     
     @Column
     @Temporal(TemporalType.TIMESTAMP)

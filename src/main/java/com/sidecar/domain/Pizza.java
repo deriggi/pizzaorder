@@ -13,19 +13,19 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "pizza")
-public class PizzaDao {
+public class Pizza {
     
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
     @OneToMany
-    Set<ToppingDao> toppings;
-    public Set<ToppingDao> getToppings(){
+    Set<Topping> toppings;
+    public Set<Topping> getToppings(){
         return toppings;
     }
 
-    public void setToppings(Set<ToppingDao> toppings){
+    public void setToppings(Set<Topping> toppings){
         this.toppings = toppings;
     }
 
