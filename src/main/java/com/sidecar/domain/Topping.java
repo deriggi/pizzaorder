@@ -18,5 +18,15 @@ public class Topping {
     @Column
     private String name;
 
+    public Topping(String name){
+        this.name = name;
+    }
+    public Topping(){
+
+    }
+
+    public String getName(){
+        return this.name;
+    }
     
 }

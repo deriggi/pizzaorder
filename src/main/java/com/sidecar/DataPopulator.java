@@ -1,11 +1,18 @@
 package com.sidecar;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.annotation.PostConstruct;
 
 import com.sidecar.dao.CustomerDao;
 import com.sidecar.dao.OrderDao;
+import com.sidecar.dao.PizzaDao;
+import com.sidecar.dao.ToppingDao;
 import com.sidecar.domain.Customer;
 import com.sidecar.domain.Order;
+import com.sidecar.domain.Pizza;
+import com.sidecar.domain.Topping;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,6 +28,12 @@ public class DataPopulator {
     private OrderDao orderDao;
 
     @Autowired
+    private PizzaDao pizzaDao;
+    
+    @Autowired
+    private ToppingDao toppingDao;
+
+    @Autowired
 	private PasswordEncoder bcryptEncoder;
  
     @PostConstruct
@@ -34,9 +47,22 @@ public class DataPopulator {
         c.setPassword(bcryptEncoder.encode("password"));
         c = customerDao.save(c);
 
-        Order o = new Order(c);
-        orderDao.save(o);
+        Topping anchovy = new Topping("anchovy");
+        Set<Topping> toppings = new HashSet<Topping>();
+        toppings.add(anchovy);
+        toppingDao.save(toppings);
 
+        Pizza p = new Pizza();
+        p.setToppings(toppings);
+        p = pizzaDao.save(p);
+        
+        Order o = new Order(c);
+        o.addPizza(p);
+        
+
+        o = orderDao.save(o);
+        System.out.println(o.getPizza().size() + " is the size");
+        System.out.println(o.getPizza().iterator().next().getToppings().size() + " are the toppings on this"); 
 
     }
     
