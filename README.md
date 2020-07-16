@@ -11,7 +11,7 @@ This class creates a user with username ```sidecar``` and ```password``` for the
 
 ## Endpoints
 
-```/authenticate``` is a ```POST``` request taking a username and password, returning a jwt token on success
+
 
 ```/pizzaorders``` is a ```GET``` request that takes a username and returns that user's pizza orders
 
@@ -41,7 +41,16 @@ as a ```POST``` request to ```/pizzaorders``` :
   "username": "string"
 }
 ```
- 
+
+```/authenticate``` is a ```POST``` request taking a username and password, returning a jwt token on success. Send a POST request with the following in the body to see the token response:
+```{
+     "username":"sidecar",
+     "password":"password"
+   }
+```
+The token found in the response should be included in the Authorization header in subsequenet responses. Security was disabled for the /pizzaorders path and for Swagger for this example
+
+        
 
 ## Swagger
 When running locally, Swagger UI is available at 
