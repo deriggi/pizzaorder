@@ -1,4 +1,4 @@
-# A Pizza order spring boot application
+# A Pizza order Spring Boot application
 This application models a customer and pizza order system. 
 
 ## Startup
