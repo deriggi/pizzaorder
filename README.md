@@ -1,4 +1,4 @@
-# A Pizza order spring boot application
+# A Pizza order Spring Boot application
 This application models a customer and pizza order system. 
 
 ## Startup
@@ -11,7 +11,7 @@ This class creates a user with username ```sidecar``` and ```password``` for the
 
 ## Endpoints
 
-```/authenticate``` is a ```POST``` request taking a username and password, returning a jwt token on success
+
 
 ```/pizzaorders``` is a ```GET``` request that takes a username and returns that user's pizza orders
 
@@ -32,16 +32,31 @@ A response from the pizza orders request will look like this:
 ```
 
 To Create a pizza order, there is a simple service that takes a list of toppings and a username like
+<<<<<<< HEAD
 as a ```POST``` request to ```/pizzaorders```:
 
 ```{
+=======
+as a ```POST``` request to ```/pizzaorders``` :
+```
+{
+>>>>>>> 7e971ce8461b3bd5b0847f9b3368fb693c868076
   "toppings": [
     "string"
   ],
   "username": "string"
-}```
+}
+```
 
- 
+```/authenticate``` is a ```POST``` request taking a username and password, returning a jwt token on success. Send a POST request with the following in the body to see the token response:
+```{
+     "username":"sidecar",
+     "password":"password"
+   }
+```
+The token found in the response should be included in the Authorization header in subsequenet responses. Security was disabled for the /pizzaorders path and for Swagger for this example
+
+        
 
 ## Swagger
 When running locally, Swagger UI is available at 
