@@ -45,14 +45,23 @@ public class DataPopulator {
         c = customerDao.save(c);
 
         Set<Topping> toppings = new HashSet<Topping>();
+        Topping pepperoni = new Topping("pepperoni");
         toppings.add(new Topping("artichoke"));
-        toppings.add(new Topping("pepperoni"));
+        toppings.add(pepperoni);
         toppings.add(new Topping("anchovy"));
         toppingDao.save(toppings);
 
         Pizza p = new Pizza();
         p.setToppings(toppings);
         pizzaDao.save(p);
+
+        Pizza meatPizza = new Pizza();
+        Set<Topping> meatToppings = new HashSet<Topping>();
+        meatToppings.add(new Topping("sausage"));
+        meatToppings.add(pepperoni);
+        toppingDao.save(meatToppings);
+        meatPizza.setToppings(meatToppings);
+        pizzaDao.save(meatPizza);
         
         Order o = new Order(c);
         o.addPizza(p);
