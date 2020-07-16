@@ -32,15 +32,9 @@ A response from the pizza orders request will look like this:
 ```
 
 To Create a pizza order, there is a simple service that takes a list of toppings and a username like
-<<<<<<< HEAD
-as a ```POST``` request to ```/pizzaorders```:
-
-```{
-=======
 as a ```POST``` request to ```/pizzaorders``` :
 ```
 {
->>>>>>> 7e971ce8461b3bd5b0847f9b3368fb693c868076
   "toppings": [
     "string"
   ],
